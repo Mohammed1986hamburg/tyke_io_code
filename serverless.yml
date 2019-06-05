@@ -1,0 +1,16 @@
+service: aws-nodejs 
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+
+
+functions:
+  device:
+    handler: handler.device
+    events:
+      - http: GET getone/{ID}
+      - http: GET insert/{name}/{firmwareVersion}/{firmwareRevision}
+
+ 
+
